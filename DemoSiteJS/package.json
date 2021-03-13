@@ -1,0 +1,69 @@
+{
+    "name": "hello-react",
+    "version": "0.0.1",
+    "description": "first react app",
+    "babel": {
+        "presets": [
+            [
+                "@babel/preset-env",
+                {
+                    "targets": {
+                        "browsers": [
+                            "ie >= 8",
+                            "chrome >= 62"
+                        ],
+                        "node": "current"
+                    }
+                },
+                "@babel/preset-react"
+            ]
+        ],
+        "plugins": [
+            "@babel/plugin-transform-react-jsx",
+            "@babel/plugin-transform-runtime"
+        ]
+    },
+    "jest": {
+        "testMatch": [
+            "<rootDir>/__jest__/__test__/*.js"
+        ],
+        "moduleFileExtensions": [
+            "js",
+            "jsx"
+        ],
+        "transform": {
+            "^.+\\.(js|jsx)$": "babel-jest"
+        },
+        "moduleNameMapper": {
+            "@/(.*)$": "<rootDir>/src/$1"
+        },
+        "testEnvironment": "node",
+        "collectCoverage": true,
+        "coverageDirectory": "./coverage"
+    },
+    "dependencies": {
+        "jquery": "^3.6.0",
+        "react": "^16.14.0",
+        "react-dom": "^16.14.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.12.17",
+        "@babel/core": "^7.12.17",
+        "@babel/plugin-transform-react-jsx": "^7.12.13",
+        "@babel/plugin-transform-react-jsx-development": "^7.12.12",
+        "@babel/plugin-transform-runtime": "^7.12.17",
+        "@babel/preset-env": "^7.12.17",
+        "@babel/preset-react": "^7.12.13",
+        "babel-core": "^7.0.0-bridge.0",
+        "babel-jest": "^26.6.3",
+        "enzyme": "^3.11.0",
+        "enzyme-adapter-react-16": "^1.15.6",
+        "jest": "^26.6.3",
+        "jsdom": "^16.5.1",
+        "jsdom-global": "^3.0.2"
+    },
+    "scripts": {
+        "build-js": "babel src -d ../DemoSite/Lib -s",
+        "test": "jest"
+    }
+}
