@@ -23,7 +23,7 @@
             "@babel/plugin-transform-runtime"
         ]
     },
-    "jest": {
+    "jest0 00": {
         "testMatch": [
             "<rootDir>/__jest__/__test__/*.js"
         ],
@@ -39,7 +39,28 @@
         },
         "testEnvironment": "node",
         "collectCoverage": true,
-        "coverageDirectory": "./coverage"
+        "coverageDirectory": "./coverage",
+        "reporters": [
+            "default",
+            [
+                "jest-xunit",{},
+                "jest-html-reporters", {
+                    "publicPath": "__jest__/report",
+                    "filename": "DemoJs.html.html",
+                    "expand": true
+                  }
+            ]
+            
+        ]
+    },
+    "jestxunit":
+    {
+        "filename": "DemoJs.xunit.xml",
+        "traitsRegex": [
+            { "regex": "/\\(Test Type:([^,)]+)(,|\\)).*/g, name: 'Category' "},
+            { "regex": "/.*Test Traits: ([^)]+)\\).*/g, name: 'Type' "}
+        ],
+        "outputPath":"__jest__/report"
     },
     "dependencies": {
         "jquery": "^3.6.0",
@@ -59,11 +80,17 @@
         "enzyme": "^3.11.0",
         "enzyme-adapter-react-16": "^1.15.6",
         "jest": "^26.6.3",
+        "jest-html-reporters": "^2.1.2",
+        "jest-xunit": "^1.0.11",
         "jsdom": "^16.5.1",
         "jsdom-global": "^3.0.2"
     },
     "scripts": {
         "build-js": "babel src -d ../DemoSite/Lib -s",
-        "test": "jest"
+        "test": "jest",
+        "test-xunit": "jest --reporters=jest-xunit ",
+        "test-html": "jest --reporters=jest-html-reporters --config ./jest.config.json ",
+        "test-html2": "jest --reporters=jest-html-reporters --config=jest.config.json "
+
     }
 }

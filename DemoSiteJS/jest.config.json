@@ -1,0 +1,32 @@
+{   
+  
+        "testMatch": [
+            "<rootDir>/__jest__/__test__/*.js"
+        ],
+        "moduleFileExtensions": [
+            "js",
+            "jsx"
+        ],
+        "transform": {
+            "^.+\\.(js|jsx)$": "babel-jest"
+        },
+        "moduleNameMapper": {
+            "@/(.*)$": "<rootDir>/src/$1"
+        },
+        "testEnvironment": "node",
+        "collectCoverage": true,
+        "coverageDirectory": "./coverage",
+        "reporters": [
+            "default",
+            [
+                "jest-html-reporters", {
+                "publicPath": "<rootDir>/__jest__/report",
+                "filename": "DemoJs.html.html",
+                "expand": false,
+                "pageTitle": "Test Report"
+                }
+            ]
+            
+        ]
+    
+}

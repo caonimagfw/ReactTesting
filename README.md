@@ -42,6 +42,9 @@ npm i @babel/plugin-transform-react-jsx-development@7.12.12 -D
 npm i enzyme@3.11.0 -D
 npm i enzyme-adapter-react-16@1.15.6 -D
 npm i jsdom@16.5.1 jsdom-global@3.0.2 -D
+npm i jest-xunit -D
+npm i jest-html-reporters -D
+
 ~~~
 ## 3. npm cmd:
 ```
@@ -81,3 +84,8 @@ https://babeljs.io/docs/en/babel-preset-env
 
 #### mock API
 >https://www.valentinog.com/blog/fake/
+
+#### Reporter
+>https://github.com/sscaff1/jest-xunit
+>https://github.com/Hazyzh/jest-html-reporters
+>https://github.com/Hargne/jest-html-reporter
